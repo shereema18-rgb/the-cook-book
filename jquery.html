@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Foods - The Cook Book</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>⚡ Foods</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="jquery.html">Foods</a>
+    <a href="ajax.html">Recipes and Ingredients</a>
+</nav>
+
+<div class="container">
+
+    <h2>Interactive Food Panels 🎛️</h2>
+
+    <button id="togglePasta">Toggle Pasta</button>
+    <button id="fadeBurger">Fade Burger</button>
+    <button id="slideSalad">Slide Salad</button>
+
+    <div class="card" id="pastaCard">
+        <h3>Pasta 🍝</h3>
+        <img src="images/pasta.jpg">
+        <p>A creamy italian pasta that can be made with any meat of your choice!</p>
+    </div>
+
+    <div class="card" id="burgerCard">
+        <h3>Burger 🍔</h3>
+        <img src="images/burger.jpg">
+        <p>A juicy beef burger topped with fresh vegetables and cheese!</p>
+    </div>
+
+    <div class="card" id="saladCard">
+        <h3>Salad 🥗</h3>
+        <img src="images/salad.jpg">
+        <p>A fresh salad, where any meat can be added or not!</p>
+    </div>
+
+</div>
+
+<script>
+$(document).ready(function(){
+
+    // Toggle Pasta
+    $("#togglePasta").click(function(){
+        $("#pastaCard").toggle(1000);
+    });
+
+    // Fade Burger
+    $("#fadeBurger").click(function(){
+        $("#burgerCard").fadeToggle(1000);
+    });
+
+    // Slide Salad
+    $("#slideSalad").click(function(){
+        $("#saladCard").slideToggle(1000);
+    });
+
+});
+</script>
+
+</body>
+</html>

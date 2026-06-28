@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipes and Ingredients - The Cook Book</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        #recipeBox ul {
+            text-align: left;
+        }
+
+        .section-title {
+            margin-top: 15px;
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌐 Recipe and Ingredients</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="jquery.html">Foods</a>
+    <a href="ajax.html">Recipes and Ingredients</a>
+</nav>
+
+<div class="container">
+
+    <h2>Select a Dish 🍽️</h2>
+
+    <button onclick="loadRecipe('pasta')">Pasta 🍝</button>
+    <button onclick="loadRecipe('burger')">Burger 🍔</button>
+    <button onclick="loadRecipe('salad')">Salad 🥗</button>
+
+    <div id="recipeBox">
+        <h3>Recipe will appear here...</h3>
+    </div>
+
+</div>
+
+<script>
+function loadRecipe(food){
+
+    const recipes = {
+        pasta: {
+            title: "Creamy Pasta 🍝",
+            img: "images/pasta.jpg",
+            ingredients: [
+                "250–300 g pasta (spaghetti, penne, or fettuccine)",
+                "2 chicken breasts (or any meat of choice)",
+                "2–3 tbsp olive oil or butter",
+                "4 cloves garlic (minced)",
+                "1 cup heavy cream (or cooking cream)",
+                "1/2 cup grated Parmesan cheese",
+                "1 tsp salt (adjust to taste)",
+                "1/2 tsp black pepper",
+                "1 tsp paprika (optional)",
+                "1/2 tsp chili flakes (optional)",
+                "1 cup pasta water (reserved)",
+                "Fresh parsley (optional garnish)"
+            ],
+            steps: [
+                "Gather and prepare all ingredients before cooking.",
+                "Boil salted water and cook pasta until al dente.",
+                "Reserve 1 cup pasta water, then drain pasta.",
+                "Cook chicken in oil/butter with seasoning until browned.",
+                "Sauté garlic in same pan until fragrant.",
+                "Add cream and cheese, stir until smooth sauce forms.",
+                "Return chicken to pan and mix well.",
+                "Add pasta and toss with sauce.",
+                "Add pasta water if needed for consistency.",
+                "Simmer 1 minute, then serve hot."
+            ]
+        },
+
+        burger: {
+            title: "Cheese Burger 🍔",
+            img: "images/burger.jpg",
+            ingredients: [
+                "Ground beef (80/20 blend)",
+                "Burger buns",
+                "Cheese slices",
+                "Salt",
+                "Black pepper",
+                "Butter",
+                "Lettuce",
+                "Tomato slices",
+                "Onion",
+                "Pickles",
+                "Ketchup",
+                "Mustard",
+                "Mayonnaise"
+            ],
+            steps: [
+                "Divide beef into equal portions and form patties.",
+                "Press dent in center for even cooking.",
+                "Season with salt and pepper.",
+                "Cook patties 3–4 minutes per side.",
+                "Add cheese and melt in last minute.",
+                "Toast buns with butter.",
+                "Assemble burger with toppings.",
+                "Add sauces and serve hot."
+            ]
+        },
+
+        salad: {
+            title: "Healthy Salad 🥗",
+            img: "images/salad.jpg",
+            ingredients: [
+                "Lettuce (2 cups)",
+                "Tomato (1–2 medium)",
+                "Cucumber (1 medium)",
+                "Onion slices",
+                "Olive oil (2–3 tbsp)",
+                "Lemon juice (1–2 tbsp)",
+                "Salt",
+                "Black pepper"
+            ],
+            steps: [
+                "Wash and chop lettuce.",
+                "Cut tomatoes into pieces.",
+                "Slice cucumber evenly.",
+                "Add onion slices.",
+                "Mix all vegetables in a bowl.",
+                "Prepare olive oil and lemon dressing.",
+                "Pour dressing over salad.",
+                "Toss gently and serve fresh."
+            ]
+        }
+    };
+
+    $("#recipeBox").html("<p>Loading recipe...</p>");
+
+    setTimeout(function(){
+
+        let recipe = recipes[food];
+
+        let ingredientsList = "<ul>";
+        recipe.ingredients.forEach(item => {
+            ingredientsList += `<li>${item}</li>`;
+        });
+        ingredientsList += "</ul>";
+
+        let stepsList = "<ol>";
+        recipe.steps.forEach(step => {
+            stepsList += `<li>${step}</li>`;
+        });
+        stepsList += "</ol>";
+
+        $("#recipeBox").html(`
+            <h2>${recipe.title}</h2>
+            <img src="${recipe.img}" style="width:100%; border-radius:10px;">
+
+            <h3 class="section-title">🥕 Ingredients</h3>
+            ${ingredientsList}
+
+            <h3 class="section-title">👨‍🍳 Steps</h3>
+            ${stepsList}
+        `);
+
+    }, 1000);
+}
+</script>
+
+</body>
+</html>

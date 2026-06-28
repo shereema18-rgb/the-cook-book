@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Cook Book</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* FLOATING CHEF EMOJI */
+        .chef {
+            position: fixed;
+            font-size: 50px;
+            animation: floatChef 6s infinite ease-in-out;
+            z-index: 999;
+            opacity: 0.9;
+        }
+
+        @keyframes floatChef {
+            0%   { transform: translate(0,0) rotate(0deg); }
+            25%  { transform: translate(80px,120px) rotate(20deg); }
+            50%  { transform: translate(200px,50px) rotate(-20deg); }
+            75%  { transform: translate(120px,200px) rotate(15deg); }
+            100% { transform: translate(0,0) rotate(0deg); }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Floating chef emojis -->
+<div class="chef">👨‍🍳</div>
+<div class="chef" style="top:100px; left:200px; animation-duration:8s;">👩‍🍳</div>
+
+<header>
+    <h1>🍽️ The Cook Book</h1>
+    <p>Your interactive guide to delicious meals</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="jquery.html">Foods</a>
+    <a href="ajax.html">Recipes and ingredients</a>
+</nav>
+
+<div class="container">
+
+    <h2>📖 Welcome to The Cook Book</h2>
+
+    <p>
+        Welcome to this cookbook, a collection of simple, flavorful, and approachable recipes
+        designed to bring joy to your kitchen and confidence to your cooking.
+    </p>
+
+    <p>
+        Cooking is more than following instructionsit is a way of caring for yourself and others,
+        exploring cultures, and turning everyday ingredients into something memorable.
+        Whether you are preparing a quick meal after a long day or trying something new on the weekend,
+        this book is here to guide you step by step with clarity and ease.
+    </p>
+
+    <p>
+        Inside these pages, you will find a variety of dishes made with common ingredients, clear techniques,
+        and practical tips that help you succeed even if you are a beginner.
+        From fresh salads and comforting soups to hearty mains and light desserts,
+        each recipe is written to be simple, reliable, and enjoyable to prepare.
+    </p>
+
+    <p>
+        The goal of this cookbook is not perfection, but progress. As you cook, you will build skills,
+        develop your taste, and gain confidence in your own style of cooking.
+        Mistakes are part of the process, and every dish is an opportunity to learn something new.
+    </p>
+
+    <p>
+        So open your kitchen, gather your ingredients, and begin this journey one recipe at a time.
+        Good food is not just about feeding the body it is about creating moments worth sharing.
+    </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
